@@ -1,21 +1,63 @@
 package Exercises;
 
-import Exercises.BodyWeight;
-
 import java.util.List;
 
-public class Squats extends BodyWeight {
+import Enums.*;
+
+public class Squats extends Calisthenics {
 
     private int Rating;
 
     private int numRates;
 
-    private Intensity intensity;
+    private final Intensity intensity = Intensity.BEGINNER;
 
     private List<Goals> goals;
 
-    private int time;       // per one rep
+    private int time;       // per one rep in seconds
 
-    private int wear;       // how tired the exercise makes you
+    private double wear;       // how tired the exercise makes you
 
+    public Squats() {
+        super();
+        this.Rating = 1;
+        this.numRates = 0;
+        this.time = 2;
+        this.wear = 5;
+    }
+
+    @Override
+    public int getRating() {
+        return this.Rating;
+    }
+
+    @Override
+    public int getRates() {
+        return this.numRates;
+    }
+
+    @Override
+    public Intensity getIntensity() {
+        return this.intensity;
+    }
+
+    @Override
+    public List<Goals> getGoals() {
+        return this.goals;
+    }
+
+    @Override
+    public int getTime() {
+        return this.time;
+    }
+
+    @Override
+    public double getWear() {
+        return this.wear;
+    }
+
+    @Override
+    public List<Targets> getTargets() {
+        return null;
+    }
 }

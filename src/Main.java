@@ -1,15 +1,40 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+
+import java.util.Scanner;
+import java.util.Scanner;
+
+import Enums.UserLevel;
+import UserData.*;
+
+
 public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Scanner in = new Scanner(System.in);
+        UserData userData = new UserData();
+        System.out.println("Create new Profile?");
+        if (in.nextLine().equals("yes")) {
+            System.out.println("Username: ");
+            String username = in.nextLine();
+            System.out.println("Password: ");
+            String pass = in.nextLine();
+            System.out.println("What is your starting fitness level? (beginner, intermediate, pro) : ");
+            String lev = in.nextLine();
+            if (lev.equals("beginner")) {
+                User user = new User(username, pass, UserLevel.Beginner);
+                userData.addUser(user);
+                System.out.println(userData.getUserData(user));
+            } else if (lev.equals("intermediate")) {
+                User user = new User(username, pass, UserLevel.Intermediate);
+                userData.addUser(user);
+                System.out.println(userData.getUserData(user));
+            } else if (lev.equals("pro")) {
+                User user = new User(username, pass, UserLevel.Pro);
+                userData.addUser(user);
+                System.out.println(userData.getUserData(user));
+            }
         }
+
     }
 }

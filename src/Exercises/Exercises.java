@@ -1,6 +1,7 @@
 package Exercises;
 
 import java.util.List;
+import Enums.*;
 
 public interface Exercises {
 
@@ -14,8 +15,8 @@ public interface Exercises {
 
     int getTime();
 
-    int getWear();
+    double getWear();
 
-
+    List<Targets> getTargets();
 
 }
