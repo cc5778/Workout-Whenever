@@ -1,4 +1,10 @@
-public class Squats {
+package Exercises;
+
+import Exercises.BodyWeight;
+
+import java.util.List;
+
+public class Squats extends BodyWeight {
 
     private int Rating;
 
@@ -6,7 +12,7 @@ public class Squats {
 
     private Intensity intensity;
 
-    // bodyweight, with equipment, etc.
+    private List<Goals> goals;
 
     private int time;       // per one rep
 
