@@ -21,9 +21,7 @@ public class SetUserInfoServlet extends HttpServlet {
         
         User user = new User(username, password);
 
-        if (!data.containsUser(user)) {
-            data.addUser(user);
-        }
+        data.addUser(user);
 
         // Send a response back to the frontend
         response.setContentType("application/json");
@@ -47,7 +45,7 @@ public class BuildWorkServlet extends HttpServlet {
 
         // Process the user's selections and generate a workout plan
         // For demonstration purposes, we'll just print the selections
-        System.out.println(selections);
+        System.out.println(selections + "ugbiubhnhoin");
 
         // Send a response back to the front-end
         response.setContentType("application/json");

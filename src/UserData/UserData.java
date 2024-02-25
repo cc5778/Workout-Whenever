@@ -22,7 +22,7 @@ public class UserData {
         return this.userData.get(user);
     }
 
-    public boolean containsUser(User user)) {
+    public boolean containsUser(User user) {
         return this.userData.containsKey(user);
     }
 
