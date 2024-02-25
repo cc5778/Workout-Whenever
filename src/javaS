@@ -1,3 +1,5 @@
+var user = "";
+
 Login.html.getElementById("loginStuff").addEventListener("Submit", function(event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -15,6 +17,8 @@ Login.html.getElementById("loginStuff").addEventListener("Submit", function(even
             password: password
         })
     })
+
+    user = username
 
     .then(response => response.json())
     .then(data => {
@@ -42,7 +46,7 @@ buildMyWorkOut.querySelector('.thisButton').addEventListener('click', function()
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(selections)
+        body: JSON.stringify(selections, user)
     })
     .then(response => response.json())
     .then(data => {

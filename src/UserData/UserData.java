@@ -8,14 +8,16 @@ import java.util.Map;
 
 public class UserData {
 
-    private Map<User, Map<Exercise, Exercises>> userData;     // user, exercise name, the exercise class
+    private static Map<User, Map<Exercise, Exercises>> userData = new HashMap<>();     // user, exercise name, the exercise class
+    private static Map<String, User> usernames = new HashMap<>();
 
     public UserData() {
-        this.userData = new HashMap<>();
     }
+
 
     public void addUser(User user){
         this.userData.put(user, user.getExercises());
+        this.usernames.put(user.getUsername(), user);
     }
 
     public Map<Exercise, Exercises> getUserData(User user) {
@@ -24,6 +26,10 @@ public class UserData {
 
     public boolean containsUser(User user) {
         return this.userData.containsKey(user);
+    }
+
+    public User getUser(String user){
+        return this.usernames.get(user);
     }
 
     

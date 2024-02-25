@@ -23,14 +23,16 @@ public class CreateWorkout {
 
     private Preferences preferences;
 
-    protected CreateWorkout(User user, Preferences preferences){
-
-        this.user = user;
-        this.exercises = user.getExercises();
+    public CreateWorkout(String user, Preferences preferences) {
+        
+        UserData data = new UserData();
+        this.user = data.getUser(user);
+        this.exercises = this.user.getExercises();
         this.rating = 0;        // starts off at 0, after getting a rating after the workout, will be on scale 1-10
         this.preferences = preferences;
 
     }
+
 
     public Set<Exercises> getTopRated() {
         Set<Exercises> sorted = new TreeSet<Exercises>(new RatingComparator());
@@ -64,8 +66,8 @@ public class CreateWorkout {
         List<Exercises> filtered = sorted.stream()
                 .filter((e) -> e.getType() == (this.preferences.getType()))
                 .filter((e) -> {
-                    for (Targets t: e.getTargets())
-                        if (this.preferences.getTargets().contains(t))
+                    for (Object g: e.getGoals())
+                        if (this.preferences.getGoals().contains(g))
                             return true;
                     return false;
                 })
