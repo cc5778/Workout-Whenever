@@ -5,7 +5,6 @@ import Exercises.Exercises;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class UserData {
 
@@ -15,7 +14,8 @@ public class UserData {
         this.userData = new HashMap<>();
     }
 
-    public void addUser(User user){
+    public void addUser(String username, String password){
+        User user = new User(username, password);
         this.userData.put(user, user.getExercises());
     }
 

@@ -2,6 +2,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 
+import UserData.*;
+
 public class SetUserInfoServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
@@ -13,6 +15,10 @@ public class SetUserInfoServlet extends HttpServlet {
         // For demonstration purposes, we'll just print the username and password
         System.out.println("Your Username: " + username);
         System.out.println("Your Password: " + password);
+
+        UserData data = new UserData();
+        
+        data.addUser(username, password);
 
         // Send a response back to the frontend
         response.setContentType("application/json");

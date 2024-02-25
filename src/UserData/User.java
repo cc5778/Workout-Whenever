@@ -20,7 +20,7 @@ public class User{
     private Map<Exercise, Exercises> exercises;
 
 
-    public User(String username, String password, UserLevel level) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
         this.exercises = new TreeMap<Exercise, Exercises>();
