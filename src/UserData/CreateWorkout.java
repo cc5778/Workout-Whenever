@@ -40,6 +40,27 @@ public class CreateWorkout {
         return sorted;
     }
 
+
+    public int getReps(Exercises exercise, int numExercises) {
+            
+            if (exercise.getIntensity() == Intensity.BEGINNER) {
+
+                return Math.floorDiv((Math.floorDiv(100, numExercises)), (int) Math.round(user.getUserLevel() * exercise.getWear()));
+
+            } else if (exercise.getIntensity() == Intensity.INTERMEDIATE) {
+
+                return Math.floorDiv((Math.floorDiv(200, numExercises)), (int) Math.round(user.getUserLevel() * exercise.getWear()));
+
+            } else if (exercise.getIntensity() == Intensity.PRO) {
+
+                return Math.floorDiv((Math.floorDiv(300, numExercises)),(int) Math.round(user.getUserLevel() * exercise.getWear()));
+
+            }
+            else {
+                return 0;
+            }
+    }
+
     public Routine makeWorkoutRoutine(){
         Set<Exercises> sorted = getTopRated();
         List<Exercises> filtered = sorted.stream()
@@ -63,21 +84,8 @@ public class CreateWorkout {
             int index = random.nextInt(0, filtered.size() - 1);
             Exercises exercise = filtered.get(index);
 
-            int reps;
-            if (exercise.getIntensity() == Intensity.BEGINNER) {
+            int reps = getReps(exercise, numExercises);
 
-                reps = Math.floorDiv((Math.floorDiv(100, numExercises)), Math.round(user.getUserLevel() * exercise.getWear()));
-
-            } else if (exercise.getIntensity() == Intensity.INTERMEDIATE) {
-
-                reps = Math.floorDiv((Math.floorDiv(200, numExercises)), Math.floor(user.getUserLevel() * exercise.getWear()));
-
-            } else if (exercise.getIntensity() == Intensity.PRO) {
-
-                reps = Math.floorDiv((Math.floorDiv(300, numExercises)),(user.getUserLevel() * exercise.getWear()));
-
-            }
-            
             int sets = Math.floorDiv(10, reps);
 
 
