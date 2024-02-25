@@ -17,7 +17,6 @@ public class SetUserInfoServlet extends HttpServlet {
         System.out.println("Your Password: " + password);
 
         UserData data = new UserData();
-        
         data.addUser(username, password);
 
         // Send a response back to the frontend
