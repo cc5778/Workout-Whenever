@@ -33,7 +33,7 @@ public class User{
         } else if (level == UserLevel.Intermediate) {
             this.userLevel = 50;
         } else {
-            this.userLevel = 0;
+            this.userLevel = 1;
         }
         this.exercises = new TreeMap<Exercise, Exercises>();
         CreateExercises c = new CreateExercises();

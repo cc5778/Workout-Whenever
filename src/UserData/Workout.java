@@ -1,6 +1,7 @@
 package UserData;
 
 import Enums.Exercise;
+import Exercises.Exercises;
 
 public class Workout {
 
@@ -10,7 +11,7 @@ public class Workout {
 
     private int sets;
 
-    public Workout(Exercise exercise, int reps, int sets) {
+    public Workout(Exercises exercise2, int reps, int sets) {
 
         this.exercise = exercise;
         this.reps = reps;

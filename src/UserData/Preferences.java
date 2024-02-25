@@ -20,9 +20,19 @@ public class Preferences {
 
 
 
-    public Preferences(ExerciseTypes type, int time, int intensity, List<Targets> targets) {
+    public Preferences(ExerciseTypes type, int time, Intensity intensity, List<Targets> targets) {
 
-
+        this.type = type;
+        this.time = time;
+        this.intensity = intensity;
+        this.targets = targets;
+        if (intensity == Intensity.BEGINNER) {
+            this.breaks = Math.floorDiv(time, 6);
+        } else if (intensity == Intensity.INTERMEDIATE) {
+            this.breaks = Math.floorDiv(time, 9);
+        } else if (intensity == Intensity.PRO) {
+            this.breaks = Math.floorDiv(time, 12);
+        }
 
     }
 

@@ -63,26 +63,29 @@ public class CreateWorkout {
             int index = random.nextInt(0, filtered.size() - 1);
             Exercises exercise = filtered.get(index);
 
-
-            int intense;
+            int reps;
             if (exercise.getIntensity() == Intensity.BEGINNER) {
 
+                reps = Math.floorDiv((Math.floorDiv(100, numExercises)), Math.round(user.getUserLevel() * exercise.getWear()));
 
+            } else if (exercise.getIntensity() == Intensity.INTERMEDIATE) {
+
+                reps = Math.floorDiv((Math.floorDiv(200, numExercises)), Math.floor(user.getUserLevel() * exercise.getWear()));
+
+            } else if (exercise.getIntensity() == Intensity.PRO) {
+
+                reps = Math.floorDiv((Math.floorDiv(300, numExercises)),(user.getUserLevel() * exercise.getWear()));
 
             }
+            
+            int sets = Math.floorDiv(10, reps);
 
-            user.getUserLevel() * exercise.getWear() /
 
-
-
-            Workout workout = new Workout(exercise, )
+            Workout workout = new Workout(exercise, sets, reps);
             exercises.add(workout);
         }
 
-        exercises.add();
-
-
-        return null;        //TODO
+        return routine;
 
     }
 
