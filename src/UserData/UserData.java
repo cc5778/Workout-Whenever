@@ -27,14 +27,6 @@ public class UserData {
         return this.userData.containsKey(user);
     }
 
-    public CreateWorkout makeWorkout(User user, Preferences preferences){
-        CreateWorkout workout = new CreateWorkout(user, preferences);
-//        Set<Exercises> topRated = workout.getTopRated();
-
-
-
-        return null;
-    }
-
+    
 
 }

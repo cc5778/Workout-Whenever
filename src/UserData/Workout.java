@@ -5,13 +5,13 @@ import Exercises.Exercises;
 
 public class Workout {
 
-    private Exercise exercise;
+    private Exercises exercise;
 
     private int reps;
 
     private int sets;
 
-    public Workout(Exercises exercise2, int reps, int sets) {
+    public Workout(Exercises exercise, int reps, int sets) {
 
         this.exercise = exercise;
         this.reps = reps;
@@ -19,7 +19,7 @@ public class Workout {
 
     }
 
-    public Exercise getExercise(){
+    public Exercises getExercise(){
         return this.exercise;
     }
 

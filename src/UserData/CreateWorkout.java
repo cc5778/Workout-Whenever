@@ -5,9 +5,7 @@ import Enums.Intensity;
 import Enums.Targets;
 import Exercises.Exercises;
 
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.random.RandomGenerator;
 import java.util.stream.Collectors;
 
 
@@ -45,15 +43,15 @@ public class CreateWorkout {
             
             if (exercise.getIntensity() == Intensity.BEGINNER) {
 
-                return Math.floorDiv((Math.floorDiv(100, numExercises)), (int) Math.round(user.getUserLevel() * exercise.getWear()));
+                return Math.floorDiv((Math.floorDiv(100, numExercises)), (int) Math.round(exercise.getWear()));
 
             } else if (exercise.getIntensity() == Intensity.INTERMEDIATE) {
 
-                return Math.floorDiv((Math.floorDiv(200, numExercises)), (int) Math.round(user.getUserLevel() * exercise.getWear()));
+                return Math.floorDiv((Math.floorDiv(200, numExercises)), (int) Math.round(exercise.getWear()));
 
             } else if (exercise.getIntensity() == Intensity.PRO) {
 
-                return Math.floorDiv((Math.floorDiv(300, numExercises)),(int) Math.round(user.getUserLevel() * exercise.getWear()));
+                return Math.floorDiv((Math.floorDiv(300, numExercises)),(int) Math.round(exercise.getWear()));
 
             }
             else {
