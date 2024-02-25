@@ -83,7 +83,29 @@
         <h2><u>Your Workout!</u></h2>
         <h4> 
           <ul>
-            
+            <form id="workoutForm">
+              <label for="exerciseType">Exercise Type:</label>
+              <select id="exerciseType" name="exerciseType">
+                  <option value="calisthenics">Calisthenics</option>
+                  <option value="pilates">Pilates</option>
+                  <option value="weightlifting">Weightlifting</option>
+              </select><br><br>
+          
+              <label for="intensity">Intensity:</label>
+              <select id="intensity" name="intensity">
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="pro">Pro</option>
+              </select><br><br>
+          
+              <label for="targets">Targets:</label>
+              <input type="text" id="targets" name="targets"><br><br>
+          
+              <label for="time">Time Available (minutes):</label>
+              <input type="number" id="time" name="time" min="1" max="120" step="1"><br><br>
+          
+              <button type="submit">Generate Workout</button>
+          </form>
           </ul>
         </h4>
       </div>
