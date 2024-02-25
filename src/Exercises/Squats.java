@@ -4,7 +4,7 @@ import java.util.List;
 
 import Enums.*;
 
-public class Squats extends Calisthenics {
+public class Squats implements Exercises {
 
     private int Rating;
 
@@ -14,16 +14,18 @@ public class Squats extends Calisthenics {
 
     private List<Goals> goals;
 
-    private int time;       // per one rep in seconds
+    private int time;       // per 5 reps in seconds
 
     private double wear;       // how tired the exercise makes you
+
+    private final ExerciseTypes exerciseType = ExerciseTypes.Calisthenics;
 
     public Squats() {
         super();
         this.Rating = 1;
         this.numRates = 0;
-        this.time = 2;
-        this.wear = 5;
+        this.time = 15;
+        this.wear = 2;
     }
 
     @Override
@@ -59,5 +61,10 @@ public class Squats extends Calisthenics {
     @Override
     public List<Targets> getTargets() {
         return null;
+    }
+
+    @Override
+    public ExerciseTypes getType() {
+        return this.exerciseType;
     }
 }

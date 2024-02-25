@@ -19,4 +19,6 @@ public interface Exercises {
 
     List<Targets> getTargets();
 
+    ExerciseTypes getType();
+
 }

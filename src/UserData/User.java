@@ -4,7 +4,6 @@ import Enums.Exercise;
 import Enums.UserLevel;
 import Exercises.Exercises;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -18,7 +17,7 @@ public class User{
     private String password;
 
     /** a map of the user's past workouts */
-    private Map<String, Set<Workout>> pastWorkouts;
+    private Map<String, Set<CreateWorkout>> pastWorkouts;
 
     /** the user's personal set of exercises, with personalized ratings, rates, etc. */
     private Map<Exercise, Exercises> exercises;

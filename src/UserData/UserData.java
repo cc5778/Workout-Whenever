@@ -4,9 +4,8 @@ import Enums.Exercise;
 import Exercises.Exercises;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.Set;
 
 public class UserData {
 
@@ -28,9 +27,9 @@ public class UserData {
         return this.userData.containsKey(user);
     }
 
-    public Workout makeWorkout(User user){
-        Workout workout = new Workout(user);
-        Map<Exercise, Exercises> topRated= workout.getTopRated();
+    public CreateWorkout makeWorkout(User user, Preferences preferences){
+        CreateWorkout workout = new CreateWorkout(user, preferences);
+//        Set<Exercises> topRated = workout.getTopRated();
 
 
 

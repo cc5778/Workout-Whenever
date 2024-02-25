@@ -1,6 +1,7 @@
 package UserData;
 
 import Enums.ExerciseTypes;
+import Enums.Intensity;
 import Enums.Targets;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public class Preferences {
 
     private int time;
 
-    private int intensity;
+    private Intensity intensity;
 
     private List<Targets> targets;
 
@@ -23,6 +24,26 @@ public class Preferences {
 
 
 
+    }
+
+    public ExerciseTypes getType() {
+        return this.type;
+    }
+
+    public int getTime() {
+        return this.time;
+    }
+
+    public Intensity getIntensity() {
+        return this.intensity;
+    }
+
+    public List<Targets> getTargets() {
+        return this.targets;
+    }
+
+    public int getBreaks() {
+        return this.breaks;
     }
 
 }
