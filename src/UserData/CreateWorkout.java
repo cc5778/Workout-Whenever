@@ -1,6 +1,7 @@
 package UserData;
 
 import Enums.Exercise;
+import Enums.Intensity;
 import Enums.Targets;
 import Exercises.Exercises;
 
@@ -53,7 +54,7 @@ public class CreateWorkout {
                 .collect(Collectors.toList());
 
         Routine routine = new Routine();
-        int time = this.preferences.getTime()
+        int time = this.preferences.getTime();
         int numExercises = (Math.floorDiv(time,10) - 1);
         List<Workout> exercises = new ArrayList<>();
 
@@ -61,18 +62,24 @@ public class CreateWorkout {
         for (int i=0; i < numExercises; i++) {
             int index = random.nextInt(0, filtered.size() - 1);
             Exercises exercise = filtered.get(index);
-            if (exercise.getWear() > 5) {
-                int x = 10 /
+
+
+            int intense;
+            if (exercise.getIntensity() == Intensity.BEGINNER) {
+
+
+
             }
+
+            user.getUserLevel() * exercise.getWear() /
+
+
+
             Workout workout = new Workout(exercise, )
             exercises.add(workout);
         }
 
         exercises.add();
-
-
-
-
 
 
         return null;        //TODO

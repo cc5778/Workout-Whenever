@@ -55,6 +55,10 @@ public class User{
         return this.exercises;
     }
 
+    public int getUserLevel() {
+        return this.userLevel;
+    }
+
 
 
 }
