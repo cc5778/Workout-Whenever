@@ -14,8 +14,7 @@ public class UserData {
         this.userData = new HashMap<>();
     }
 
-    public void addUser(String username, String password){
-        User user = new User(username, password);
+    public void addUser(User user){
         this.userData.put(user, user.getExercises());
     }
 
@@ -23,7 +22,7 @@ public class UserData {
         return this.userData.get(user);
     }
 
-    public boolean containsUser(User user) {
+    public boolean containsUser(User user)) {
         return this.userData.containsKey(user);
     }
 

@@ -5,6 +5,9 @@ import java.io.*;
 import UserData.*;
 
 public class SetUserInfoServlet extends HttpServlet {
+        
+    UserData data = new UserData();
+
     public void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         // Get the username and password from the request
@@ -15,9 +18,12 @@ public class SetUserInfoServlet extends HttpServlet {
         // For demonstration purposes, we'll just print the username and password
         System.out.println("Your Username: " + username);
         System.out.println("Your Password: " + password);
+        
+        User user = new User(username, password);
 
-        UserData data = new UserData();
-        data.addUser(username, password);
+        if (!data.containsUser(user)) {
+            data.addUser(user);
+        }
 
         // Send a response back to the frontend
         response.setContentType("application/json");
