@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build My Workout</title>
+    <link rel="icon" href="BrookFIT.png" type="png">
+   <style>
+     /* Styling the header/ h1 */
+    .header {
+    padding: 10px;
+    text-align: center;
+    background: #333;
+    color: #8FBC8F;
+    }
+
+    .header a {
+    color:cornsilk;
+    margin-right: 0%;
+    }
+
+
+    nav ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    }
+
+    nav ul li {
+    display: inline-block;
+    margin-right: 100px;
+    }
+
+    nav ul li:last-child {
+    margin-right: 0;
+    }
+
+    nav ul li a {
+    color: white;
+    text-decoration: none;
+    }
+
+   body {
+        font-family:Georgia, 'Times New Roman', Times, serif
+      }
+   
+    
+   .StepOne{
+    padding: 5px;
+    text-align: center;
+    background: #ffffff;
+    color: #333;
+   }  
+
+   .firstPart{
+    padding: 40px;
+    text-align: center;
+    background: #333;
+    color: #8FBC8F;
+   }
+
+   .StepTwo{
+    padding: 5px;
+    text-align: center;
+    background: #ffffff;
+    color: #333;
+   } 
+
+   .secondPart{
+    padding: 40px;
+    text-align: center;
+    background: #333;
+    color: #8FBC8F;
+   }
+
+   .StepThree{
+    padding: 5px;
+    text-align: center;
+    background: #ffffff;
+    color: #333;
+   } 
+
+   .thirdPart{
+    padding: 40px;
+    text-align: center;
+    background: #333;
+    color: #8FBC8F;
+   }
+
+
+    .buildButton {
+    padding: 30px 30px;
+    height: 100px;
+    text-align: center;
+    background: #333;
+    color: #8FBC8F;
+    position: relative;
+    font-size: 15px;
+    margin: 10px 2px;
+    }
+   </style>
+
+    
+</head>
+<div class = 'header'>
+    <h1>WorkoutWhenever!</h1>
+    <p>For everyone on their workout journey, no matter your skill, experience, or ability.</p>
+    <nav>
+      <ul>
+        <li sytle="display:inline-block;">  
+          <a href="main.html">Home</a>
+        </li>
+        <li sytle="display:inline-block;">
+          <a href="buildMyWorkOut.html">Build my Workout</a>
+        </li>
+        <li sytle="display:inline-block;">
+          <a href="Login.html">Login</a>
+        </li>
+      </ul>
+    </nav>
+</div>
+
+<div class = 'StepOne'>
+    <h2><u>Step 1.</u></h2>
+</div>
+
+<fieldset>
+    <div class = "firstPart">
+        <input type="checkbox" id="scales" name="scales" unchecked />
+        <label for="scales">Calisthenics</label>
+        
+        <input type="checkbox" id="pilates" name="pilates" unchecked />
+        <label for="pilates">Pilates</label>
+        
+        <input type="checkbox" id="weight" name="weights" unchecked />
+        <label for="weights">Weightlifing</label>
+        </div>    
+
+</fieldset>    
+
+<div class = 'StepTwo'>
+    <h2><u>Step 2.</u></h2>
+</div>
+
+<fieldset>
+    <div class = "secondPart">
+        <input type="checkbox" id="begin" name="begin" unchecked />
+        <label for="begin">Beginner</label>
+        
+        <input type="checkbox" id="inter" name="inter" unchecked />
+        <label for="inter">Intermediate</label>
+        
+        <input type="checkbox" id="pro" name="pro" unchecked />
+        <label for="pro">Pro</label>
+        </div>    
+
+</fieldset> 
+
+<div class = 'StepThree'>
+    <h2><u>Step 3.</u></h2>
+</div>
+
+<fieldset>
+    <div class = "thirdPart">
+        <input type="checkbox" id="flex" name="flex" unchecked />
+        <label for="flex">Flexibility</label>
+        
+        <input type="checkbox" id="mob" name="mob" unchecked />
+        <label for="mob">Mobility</label>
+        
+        <input type="checkbox" id="strength" name="strength" unchecked />
+        <label for="strength">Strength</label>
+    </div>    
+</fieldset> 
+
+<div class = "buildButton">
+    <h1>Click the button below to get your workout!</h1>
+    <button class="button thisButton">Build my Workout</button>
+  </div>
+
+</body>
+</html>
