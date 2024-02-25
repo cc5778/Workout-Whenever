@@ -15,7 +15,7 @@ Login.html.getElementById("loginStuff").addEventListener("Submit", function(even
             password: password
         })
     })
-    
+
     .then(response => response.json())
     .then(data => {
         // Do something with the response from the backend
@@ -23,3 +23,33 @@ Login.html.getElementById("loginStuff").addEventListener("Submit", function(even
     })
 
 })
+
+buildMyWorkOut.querySelector('.thisButton').addEventListener('click', function() {
+    var selections = {
+        calisthenics: buildMyWorkOut.getElementById('scales').checked,
+        pilates: buildMyWorkOut.getElementById('pilates').checked,
+        weightlifting: buildMyWorkOut.getElementById('weight').checked,
+        beginner: buildMyWorkOut.getElementById('begin').checked,
+        intermediate: buildMyWorkOut.getElementById('inter').checked,
+        pro: buildMyWorkOut.getElementById('pro').checked,
+        flexibility: buildMyWorkOut.getElementById('flex').checked,
+        mobility: buildMyWorkOut.getElementById('mob').checked,
+        strength: buildMyWorkOut.getElementById('strength').checked
+    };
+
+    fetch('/buildWorkout', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(selections)
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Do something with the response from the back-end
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
